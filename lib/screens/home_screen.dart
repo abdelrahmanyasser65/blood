@@ -1,6 +1,4 @@
 
-
-import 'package:flutter/cupertino.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -10,6 +8,8 @@ import 'package:image_picker/image_picker.dart';
 
 class Home extends StatefulWidget {
   static String routeName="Home";
+
+  const Home({super.key});
   @override
   State<Home> createState() => _HomeState();
 }
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
           return AlertDialog(
             shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            title: Text('Please choose media to select'),
+            title:const Text('Please choose media to select'),
             content: Container(
               color: Colors.grey,
               height: MediaQuery.of(context).size.height / 6,
@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
       backgroundColor: w,
       appBar: AppBar(
         backgroundColor:r,
-        title: Center(
+        title:const Center(
           child: Text('Test Blood',style:
           TextStyle(
               color: Colors.white,
@@ -132,7 +132,7 @@ class _HomeState extends State<Home> {
                 )),
               ),
             ),
-            SizedBox(
+           const SizedBox(
               height: 10,
             ),
             //if image not null show the image
@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             )
-                : Text(
+                :const Text(
               "No Image",
               style: TextStyle(fontSize: 20),
             )
@@ -160,7 +160,7 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  void MethodSetting() {
+  void methodSetting() {
     return setState(() {
       b = b == Colors.black ? Colors.white : Colors.black;
       w = w == Colors.white ? Colors.black : Colors.white;
