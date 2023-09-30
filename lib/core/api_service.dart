@@ -10,7 +10,9 @@ class DioHelper {
       baseUrl: ApiUrl.baseUrl,
       receiveDataWhenStatusError: true,
       headers: {
-        'Content-Type': '',
+        'Content-Type': 'application/json',
+        'Accept':'*/*',
+
       },
     ));
   }

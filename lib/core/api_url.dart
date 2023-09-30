@@ -1,5 +1,5 @@
 class ApiUrl{
-  static const String baseUrl="https://movies-api.routemisr.com";
-  static const String signUp="/signup";
-  static const String login="/signin";
+  static const String baseUrl="https://lavie.orangedigitalcenteregypt.com";
+  static const String signUp="/api/v1/auth/signup";
+  static const String login='/api/v1/auth/signin';
 }

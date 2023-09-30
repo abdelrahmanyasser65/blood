@@ -2,6 +2,7 @@ import 'package:blood/bussiness_logic/sign_in/login_cubit.dart';
 import 'package:blood/bussiness_logic/sign_up/sign_up_cubit.dart';
 import 'package:blood/core/api_service.dart';
 import 'package:blood/screens/login.dart';
+import 'package:blood/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home:const LoginScreen()
+        home: WelcomeScreen()
       ),
     );
   }

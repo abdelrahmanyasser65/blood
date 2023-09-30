@@ -1,5 +1,6 @@
 
 import 'package:blood/bussiness_logic/sign_up/sign_up_state.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,9 +15,8 @@ class SignUpCubit extends Cubit<SignUpState>{
   final TextEditingController passwordController=TextEditingController();
   Future postSignUp(context)async{
     var json={
-      'first_name':"abdo",
-      "last_name":"omar",
-      "age":22,
+      'firstName':"abdo",
+      "lastName":"omar",
       'email':emailController.text,
       'password':passwordController.text
     };
@@ -27,10 +27,11 @@ class SignUpCubit extends Cubit<SignUpState>{
     ).then((value){
       if(value.statusCode==200){
         print("success");
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));
       }
       emit(SignUpSuccess());
     }).catchError((e){
+      print(e.toString());
       print("error");
       emit(SignUpError());
     });
